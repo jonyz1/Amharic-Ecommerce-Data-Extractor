@@ -86,7 +86,7 @@ def clean_message(text):
 async def scrape_channel(client, channel_username, writer, media_dir):
     entity = await client.get_entity(channel_username)
     channel_title = entity.title  # Extract the channel's title
-    async for message in client.iter_messages(entity, limit=10):
+    async for message in client.iter_messages(entity, limit=6):
         media_path = None
         if message.media and hasattr(message.media, 'photo'):
             # Create a unique filename for the photo
